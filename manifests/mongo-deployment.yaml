@@ -29,3 +29,10 @@ spec:
             memory: 100Mi
         ports:
         - containerPort: 27017
+        volumeMounts:
+        - mountPath: /data/db
+        name: mongo-pvc
+    volumnes:
+      - name: mongo-pvc
+      persistentVolumeClaim:
+            claimName: mongo-pvc
