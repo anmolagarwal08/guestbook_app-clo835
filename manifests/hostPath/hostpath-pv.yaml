@@ -3,12 +3,12 @@ kind: PersistentVolume
 metadata:
   name: host-mongodb-pv
 spec:
-  capacity: 
+  capacity:
     storage: 4Gi
   volumeMode: Filesystem
-storageClassName: localstorage
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
+  storageClassName: localstorage
   hostPath:
-    path: /tmp/mongodb
+    path: /tmp/mongodb/
