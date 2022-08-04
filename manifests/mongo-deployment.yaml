@@ -24,8 +24,8 @@ spec:
         - containerPort: 27017
         volumeMounts:
         - mountPath: /data/db
-        name: mongodb-pvc
-    volumnes:
-      - name: mongodb-pvc
-      persistentVolumeClaim:
+          name: mongo-pvc
+      volumes:
+        - name: mongo-pvc
+          persistentVolumeClaim:
             claimName: mongo-pvc
