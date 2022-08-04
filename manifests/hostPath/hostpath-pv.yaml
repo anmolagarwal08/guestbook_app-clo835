@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: host-mongodb-pv
+spec:
+  capacity: 
+    storage: 4Gi
+  volumeMode: Filesystem
+storageClassName: localstorage
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: /tmp/mongodb
