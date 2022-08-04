@@ -20,19 +20,12 @@ spec:
       containers:
       - name: mongo
         image: mongo:4.2
-        args:
-          - --bind_ip
-          - 0.0.0.0
-        resources:
-          requests:
-            cpu: 100m
-            memory: 100Mi
         ports:
         - containerPort: 27017
         volumeMounts:
         - mountPath: /data/db
-        name: mongo-pvc
-    volumnes:
-      - name: mongo-pvc
-      persistentVolumeClaim:
+          name: mongo-pvc
+      volumes:
+        - name: mongo-pvc
+          persistentVolumeClaim:
             claimName: mongo-pvc
